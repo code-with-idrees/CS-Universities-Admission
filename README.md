@@ -90,40 +90,41 @@ Applying to grad school is overwhelming. You're juggling hundreds of university 
 ## 📸 Screenshots
 
 <div align="center">
+  <h3>🌌 Main Dashboard — Dark Mode</h3>
+  <p><em>The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.</em></p>
+  <img src="screenshots/main-view.png" alt="Main Dashboard" width="100%"/>
+</div>
 
-### 🌌 Main Dashboard — Dark Mode
-<p><em>The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.</em></p>
+<br/>
 
-<img src="screenshots/main-view.png" alt="Main Dashboard" width="100%"/>
+<div align="center">
+  <h3>📖 University Card — Faculty &amp; AI Insights</h3>
+  <p><em>Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.</em></p>
+  <img src="screenshots/faculty-insights.png" alt="Faculty and Admission Insights" width="100%"/>
+</div>
 
----
+<br/>
 
-### 📖 University Card — Faculty & AI Insights
-<p><em>Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.</em></p>
+<div align="center">
+  <h3>🤖 AI-Generated Admission Requirements</h3>
+  <p><em>Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.</em></p>
+  <img src="screenshots/interest-filters.png" alt="AI Admission Insights" width="100%"/>
+</div>
 
-<img src="screenshots/faculty-insights.png" alt="Faculty & Admission Insights" width="100%"/>
+<br/>
 
----
+<div align="center">
+  <h3>🧠 Gemini AI Advisor — Live Chat</h3>
+  <p><em>The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.</em></p>
+  <img src="screenshots/ai-assistant.png" alt="Gemini AI Advisor Chat" width="100%"/>
+</div>
 
-### 🤖 AI-Generated Admission Requirements
-<p><em>Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.</em></p>
+<br/>
 
-<img src="screenshots/interest-filters.png" alt="AI Admission Insights" width="100%"/>
-
----
-
-### 🧠 Gemini AI Advisor — Live Chat
-<p><em>The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.</em></p>
-
-<img src="screenshots/ai-assistant.png" alt="Gemini AI Advisor Chat" width="100%"/>
-
----
-
-### ☀️ Light Mode
-<p><em>A clean, crisp light theme for daytime use — every component adapts gracefully.</em></p>
-
-<img src="screenshots/light-theme.png" alt="Light Mode" width="100%"/>
-
+<div align="center">
+  <h3>☀️ Light Mode</h3>
+  <p><em>A clean, crisp light theme for daytime use — every component adapts gracefully.</em></p>
+  <img src="screenshots/light-theme.png" alt="Light Mode" width="100%"/>
 </div>
 
 ---
