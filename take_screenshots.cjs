@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 3001;
   await new Promise(r => setTimeout(r, 2000));
 
   console.log('Taking screenshot 1: Main View (Dark Mode)...');
-  await page.screenshot({ path: 'screenshots/1_main_view.png', fullPage: false });
+  await page.screenshot({ path: 'screenshots/main-dashboard.png', fullPage: false });
 
   console.log('Taking screenshot 2: Filtered by Interest...');
   // Click an interest pill
@@ -32,7 +32,7 @@ const PORT = process.env.PORT || 3001;
   if (interestPill) {
     await interestPill.click();
     await new Promise(r => setTimeout(r, 1500));
-    await page.screenshot({ path: 'screenshots/2_filtered_by_interest.png' });
+    await page.screenshot({ path: 'screenshots/smart-filtering.png' });
   } else {
     console.log('  No .interest-pill found, trying alternative selector...');
     // Try clicking the first interest button in the filter section
@@ -41,7 +41,7 @@ const PORT = process.env.PORT || 3001;
       await altPill.click();
       await new Promise(r => setTimeout(r, 1500));
     }
-    await page.screenshot({ path: 'screenshots/2_filtered_by_interest.png' });
+    await page.screenshot({ path: 'screenshots/smart-filtering.png' });
   }
 
   console.log('Taking screenshot 3: Expanded Card...');
@@ -49,7 +49,13 @@ const PORT = process.env.PORT || 3001;
   if (expandBtn) {
     await expandBtn.click();
     await new Promise(r => setTimeout(r, 2000));
-    await page.screenshot({ path: 'screenshots/3_expanded_card.png' });
+    // Click Gemini fetch to populate real AI response
+    const geminiBtn = await page.$('.gemini-btn');
+    if (geminiBtn) {
+       await geminiBtn.click();
+       await new Promise(r => setTimeout(r, 5000)); // Wait for real AI response
+    }
+    await page.screenshot({ path: 'screenshots/faculty-insights.png' });
   }
 
   console.log('Taking screenshot 4: Gemini Chat...');
@@ -57,7 +63,15 @@ const PORT = process.env.PORT || 3001;
   if (fab) {
     await fab.click();
     await new Promise(r => setTimeout(r, 2000));
-    await page.screenshot({ path: 'screenshots/4_gemini_chat.png' });
+    // Type and ask a question to see real AI text
+    const chatInput = await page.$('.chatbot-input-area__field');
+    const sendBtn = await page.$('.chatbot-input-area__send-btn');
+    if (chatInput && sendBtn) {
+      await chatInput.type('Hi, what are the GRE requirements for MIT?');
+      await sendBtn.click();
+      await new Promise(r => setTimeout(r, 5000)); // Wait for response
+    }
+    await page.screenshot({ path: 'screenshots/gemini-ai-advisor.png' });
   }
 
   console.log('Taking screenshot 5: Light Mode...');
@@ -78,14 +92,14 @@ const PORT = process.env.PORT || 3001;
   if (themeBtn) {
     await themeBtn.click();
     await new Promise(r => setTimeout(r, 1500));
-    await page.screenshot({ path: 'screenshots/5_light_mode.png' });
+    await page.screenshot({ path: 'screenshots/light-mode-view.png' });
   }
 
   // Screenshot 6: Mobile view (bonus)
   console.log('Taking screenshot 6: Mobile View...');
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2 });
   await new Promise(r => setTimeout(r, 1500));
-  await page.screenshot({ path: 'screenshots/6_mobile_view.png' });
+  await page.screenshot({ path: 'screenshots/mobile-responsive.png' });
 
   await browser.close();
   console.log('✅ All screenshots saved to /screenshots directory.');
