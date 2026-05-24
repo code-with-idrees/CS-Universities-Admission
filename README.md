@@ -50,11 +50,11 @@ Powered by **React**, **Vite**, and **Google Gemini AI**, the portal delivers a 
 
 ### 🌌 Main Dashboard (Dark Mode)
 The primary interface showcasing the premium glassmorphism design, search bar, and university list.
-![Main View](screenshots/main-dashboard.png)
+![Main View](screenshots/main-view.png)
 
 ### 🎯 Smart Filtering by Research Interest
 Selecting research interests highlights matching universities and specifically identifies which professors match your criteria.
-![Filtered View](screenshots/smart-filtering.png)
+![Filtered View](screenshots/interest-filters.png)
 
 ### 📖 Deep Faculty & Admission Insights
 Expand any university card to see a full list of faculty, direct links to their homepages, and a dedicated AI button to fetch live admission requirements.
@@ -62,15 +62,11 @@ Expand any university card to see a full list of faculty, direct links to their 
 
 ### 🤖 Gemini AI Assistant (Resume Analysis)
 Chat with the built-in Gemini advisor. Upload your resume (PDF/TXT) and let the AI find the best programs for your background.
-![Gemini Chat](screenshots/gemini-ai-advisor.png)
+![Gemini Chat](screenshots/ai-assistant.png)
 
 ### ☀️ Light Mode
 A clean and crisp light theme for those who prefer it.
-![Light Mode](screenshots/light-mode-view.png)
-
-### 📱 Mobile Optimized
-A flawless experience on the go.
-![Mobile View](screenshots/mobile-responsive.png)
+![Light Mode](screenshots/light-theme.png)
 
 ---
 
