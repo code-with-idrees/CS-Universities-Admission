@@ -211,12 +211,15 @@ cd CS-Universities-Admission
 # 2. Install dependencies
 npm install
 
-# 3. Set up your environment
+# 3. Fetch and build the database locally
+npm run update-data
+
+# 4. Set up your environment
 cp .env.example .env
 # Then edit .env and add your Gemini API key:
 #   VITE_GEMINI_API_KEY=your_key_here
 
-# 4. Start the dev server
+# 5. Start the dev server
 npm run dev
 ```
 
@@ -304,7 +307,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Built with ❤️ by [Muhammad Idrees](https://github.com/code-with-idrees)**
 
-*University and faculty data sourced from [CSRankings.org](http://csrankings.org/) · AI powered by [Google Gemini](https://ai.google.dev/)*
+*University and faculty data sourced from [CSRankings.org](http://csrankings.org/) under the [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. · AI powered by [Google Gemini](https://ai.google.dev/)*
 
 <br/>
 

@@ -34,6 +34,8 @@ git push origin main
 ## 💻 Test Locally
 
 ```bash
+npm install
+npm run update-data  # Dynamically fetches and builds the database locally
 npm run dev
 ```
 
