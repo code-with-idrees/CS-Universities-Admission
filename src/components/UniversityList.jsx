@@ -16,15 +16,22 @@ const UniversityList = ({ universities }) => {
       {universities.map((u, idx) => {
         const isExpanded = expandedId === idx;
         return (
-          <div key={idx} className={`card ${isExpanded ? 'expanded' : ''}`} onClick={() => toggleExpand(idx)}>
-            <h3>{u.name}</h3>
-            <p><strong>Region:</strong> {u.region}</p>
-            <p><strong>Country:</strong> {u.country}</p>
-            <p><a href={u.homepage} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Visit Homepage ↗</a></p>
-            <p><strong>Faculty count:</strong> {u.faculties?.length || 0}</p>
+          <div key={idx} className={`card ${isExpanded ? 'expanded' : ''}`}>
+            <div className="card-header" onClick={() => toggleExpand(idx)}>
+              <div>
+                <h3>{u.name}</h3>
+                <p><strong>Region:</strong> {u.region}</p>
+                <p><strong>Country:</strong> {u.country}</p>
+                <p><a href={u.homepage} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Visit Homepage ↗</a></p>
+                <p style={{ marginTop: '0.5rem', color: '#fff' }}><strong>Faculty count:</strong> {u.faculties?.length || 0}</p>
+              </div>
+              <button className="expand-btn">
+                {isExpanded ? '⯅ Hide Details' : '⯆ View Faculty & Admission Details'}
+              </button>
+            </div>
             
             {isExpanded && (
-              <div className="details-section" onClick={(e) => e.stopPropagation()}>
+              <div className="details-section">
                 <hr />
                 <h4>Graduate Admission Insights (AI Generated)</h4>
                 <div className="insight-box">
@@ -35,25 +42,22 @@ const UniversityList = ({ universities }) => {
                     <li><strong>TOEFL/IELTS:</strong> TOEFL &gt; 100 or IELTS &gt; 7.5</li>
                     <li><strong>GPA:</strong> 3.5+ out of 4.0</li>
                   </ul>
-                  <button className="gemini-btn">Ask Gemini for Specifics</button>
+                  <button className="gemini-btn">Ask Gemini for Specifics for {u.name}</button>
                 </div>
 
-                <h4>Faculty & Research Areas</h4>
+                <h4>Faculty & Research Areas (from CSrankings)</h4>
                 <div className="faculty-list">
                   {u.faculties && u.faculties.length > 0 ? (
-                    u.faculties.slice(0, 20).map((faculty, fIdx) => (
+                    u.faculties.map((faculty, fIdx) => (
                       <div key={fIdx} className="faculty-item">
-                        <a href={faculty.homepage || '#'} target="_blank" rel="noopener noreferrer">{faculty.name}</a>
+                        <a href={faculty.homepage || '#'} target="_blank" rel="noopener noreferrer"><strong>{faculty.name}</strong></a>
                         {faculty.areas && faculty.areas.length > 0 && (
-                          <span className="faculty-areas"> ({faculty.areas.join(', ')})</span>
+                          <div className="faculty-areas">{faculty.areas.join(', ')}</div>
                         )}
                       </div>
                     ))
                   ) : (
                     <p>No faculty data available.</p>
-                  )}
-                  {u.faculties && u.faculties.length > 20 && (
-                    <p>...and {u.faculties.length - 20} more faculties.</p>
                   )}
                 </div>
               </div>
