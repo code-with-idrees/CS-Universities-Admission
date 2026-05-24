@@ -1,78 +1,92 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const { spawn } = require('child_process');
+
+const PORT = process.env.PORT || 3001;
 
 (async () => {
-  console.log('Starting Vite dev server...');
-  const serverProcess = spawn('npm', ['run', 'dev'], { shell: true });
-  
-  // Wait for server to start (fixed delay instead of parsing stdout)
-  await new Promise(r => setTimeout(r, 6000));
-
-  // Give it an extra second just in case
-  await new Promise(r => setTimeout(r, 1000));
-
   console.log('Launching browser...');
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   
-  await page.setViewport({ width: 1440, height: 900 });
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
 
-  // Navigate to the local dev server (default port for Vite is usually 5173, but check output)
-  // Let's assume 5173 for Vite
-  await page.goto('http://localhost:5173', { waitUntil: 'networkidle0' });
+  console.log(`Navigating to http://localhost:${PORT}...`);
+  await page.goto(`http://localhost:${PORT}`, { waitUntil: 'networkidle0', timeout: 30000 });
 
   if (!fs.existsSync('screenshots')) {
     fs.mkdirSync('screenshots');
   }
 
-  console.log('Taking screenshot: Main View...');
+  // Wait for the app to fully load
+  await new Promise(r => setTimeout(r, 2000));
+
+  console.log('Taking screenshot 1: Main View (Dark Mode)...');
   await page.screenshot({ path: 'screenshots/1_main_view.png', fullPage: false });
 
-  console.log('Taking screenshot: Toggle Interest...');
+  console.log('Taking screenshot 2: Filtered by Interest...');
   // Click an interest pill
   const interestPill = await page.$('.interest-pill');
   if (interestPill) {
     await interestPill.click();
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1500));
+    await page.screenshot({ path: 'screenshots/2_filtered_by_interest.png' });
+  } else {
+    console.log('  No .interest-pill found, trying alternative selector...');
+    // Try clicking the first interest button in the filter section
+    const altPill = await page.$('.interest-filter button');
+    if (altPill) {
+      await altPill.click();
+      await new Promise(r => setTimeout(r, 1500));
+    }
     await page.screenshot({ path: 'screenshots/2_filtered_by_interest.png' });
   }
 
-  console.log('Taking screenshot: Expanded Card...');
+  console.log('Taking screenshot 3: Expanded Card...');
   const expandBtn = await page.$('.expand-btn');
   if (expandBtn) {
     await expandBtn.click();
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 2000));
     await page.screenshot({ path: 'screenshots/3_expanded_card.png' });
   }
 
-  console.log('Taking screenshot: Gemini Chat...');
+  console.log('Taking screenshot 4: Gemini Chat...');
   const fab = await page.$('#gemini-chat-fab');
   if (fab) {
     await fab.click();
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 2000));
     await page.screenshot({ path: 'screenshots/4_gemini_chat.png' });
   }
 
-  console.log('Taking screenshot: Light Mode...');
-  // Close chat
+  console.log('Taking screenshot 5: Light Mode...');
+  // Close chat first
   const closeChat = await page.$('.chatbot-header__close-btn');
   if (closeChat) {
     await closeChat.click();
+    await new Promise(r => setTimeout(r, 1000));
+  }
+  // Collapse any expanded card
+  const expandedBtn = await page.$('.card.expanded .expand-btn');
+  if (expandedBtn) {
+    await expandedBtn.click();
     await new Promise(r => setTimeout(r, 1000));
   }
   // Toggle light mode
   const themeBtn = await page.$('.theme-toggle-btn');
   if (themeBtn) {
     await themeBtn.click();
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1500));
     await page.screenshot({ path: 'screenshots/5_light_mode.png' });
   }
 
-  await browser.close();
-  console.log('Screenshots saved to /screenshots directory.');
+  // Screenshot 6: Mobile view (bonus)
+  console.log('Taking screenshot 6: Mobile View...');
+  await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2 });
+  await new Promise(r => setTimeout(r, 1500));
+  await page.screenshot({ path: 'screenshots/6_mobile_view.png' });
 
-  // Kill server
-  serverProcess.kill();
-  process.exit(0);
+  await browser.close();
+  console.log('✅ All screenshots saved to /screenshots directory.');
 })();
