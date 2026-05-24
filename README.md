@@ -92,37 +92,37 @@ Applying to grad school is overwhelming. You're juggling hundreds of university 
 <div align="center">
 
 ### 🌌 Main Dashboard — Dark Mode
-*The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.*
+<p><em>The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.</em></p>
 
-![Main Dashboard](screenshots/main-view.png)
+<img src="screenshots/main-view.png" alt="Main Dashboard" width="100%"/>
 
 ---
 
 ### 📖 University Card — Faculty & AI Insights
-*Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.*
+<p><em>Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.</em></p>
 
-![Faculty & Admission Insights](screenshots/faculty-insights.png)
+<img src="screenshots/faculty-insights.png" alt="Faculty & Admission Insights" width="100%"/>
 
 ---
 
 ### 🤖 AI-Generated Admission Requirements
-*Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.*
+<p><em>Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.</em></p>
 
-![AI Admission Insights](screenshots/interest-filters.png)
+<img src="screenshots/interest-filters.png" alt="AI Admission Insights" width="100%"/>
 
 ---
 
 ### 🧠 Gemini AI Advisor — Live Chat
-*The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.*
+<p><em>The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.</em></p>
 
-![Gemini AI Advisor Chat](screenshots/ai-assistant.png)
+<img src="screenshots/ai-assistant.png" alt="Gemini AI Advisor Chat" width="100%"/>
 
 ---
 
 ### ☀️ Light Mode
-*A clean, crisp light theme for daytime use — every component adapts gracefully.*
+<p><em>A clean, crisp light theme for daytime use — every component adapts gracefully.</em></p>
 
-![Light Mode](screenshots/light-theme.png)
+<img src="screenshots/light-theme.png" alt="Light Mode" width="100%"/>
 
 </div>
 
