@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { csvParse } from 'd3-dsv';
+// removed csvParse import
 import UniversityList from './components/UniversityList.jsx';
 import FilterBar from './components/FilterBar.jsx';
 
@@ -11,24 +11,18 @@ const App = () => {
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedCountry, setSelectedCountry] = useState('All');
 
-  // Load CSV data on mount
+  // Load JSON data on mount
   useEffect(() => {
-    fetch('/data/institutions.csv')
-      .then((res) => res.text())
-      .then((text) => {
-        const data = csvParse(text, d => ({
-          institution: d.institution,
-          region: d.region,
-          countryabbrv: d.countryabbrv,
-          homepage: d.homepage,
-        }));
+    fetch('/data/processed-universities.json')
+      .then((res) => res.json())
+      .then((data) => {
         setUniversities(data);
         setFiltered(data);
         // Extract unique regions & countries
         setRegions(['All', ...Array.from(new Set(data.map(u => u.region)))]);
-        setCountries(['All', ...Array.from(new Set(data.map(u => u.countryabbrv)))]);
+        setCountries(['All', ...Array.from(new Set(data.map(u => u.country)))]);
       })
-      .catch((err) => console.error('Failed to load institutions:', err));
+      .catch((err) => console.error('Failed to load universities:', err));
   }, []);
 
   // Apply filters whenever selection changes
@@ -38,7 +32,7 @@ const App = () => {
       result = result.filter(u => u.region === selectedRegion);
     }
     if (selectedCountry !== 'All') {
-      result = result.filter(u => u.countryabbrv === selectedCountry);
+      result = result.filter(u => u.country === selectedCountry);
     }
     setFiltered(result);
   }, [selectedRegion, selectedCountry, universities]);

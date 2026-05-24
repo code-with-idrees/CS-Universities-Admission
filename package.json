@@ -10,12 +10,13 @@
     "update-data": "node scripts/fetchAndProcessData.js"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@google/generative-ai": "^0.2.0",
+    "axios": "^1.7.2",
+    "csv-parse": "^6.2.1",
     "d3-dsv": "^3.0.1",
     "lucide-react": "^0.300.0",
-    "axios": "^1.7.2",
-    "@google/generative-ai": "^0.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-window": "^1.8.9"
   },
   "devDependencies": {
