@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBuhxgxt08iRWZfdhV-dXEgXuxdbLLXR7k';
+const API_KEY = process.env.GEMINI_API_KEY || 'YOUR_NEW_GEMINI_API_KEY_HERE';
 const modelsToTry = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash'];
 
 for (const model of modelsToTry) {
