@@ -1,123 +1,313 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/code-with-idrees/CS-Universities-Admission/main/public/favicon.svg" alt="Logo" width="80" height="80">
-  <h1 align="center">🎓 CS Universities Admission Portal</h1>
 
-  <p align="center">
-    <strong>A Beautiful, AI-Powered Dashboard for Prospective CS Graduate Students</strong>
-  </p>
+# 🎓 CS Universities Admission Portal
 
-  <p align="center">
-    <a href="#-features">Features</a> •
-    <a href="#-screenshots">Screenshots</a> •
-    <a href="#-architecture">Architecture</a> •
-    <a href="#-quick-start">Quick Start</a>
-  </p>
-</div>
+### *Your AI-Powered Gateway to Graduate School*
+
+[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Gemini AI](https://img.shields.io/badge/Gemini_AI-2.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-ff69b4?style=for-the-badge)](https://github.com/code-with-idrees/CS-Universities-Admission/pulls)
+
+<br/>
+
+**Explore 500+ universities · 10,000+ professors · 20+ research areas · 60+ countries**
+
+An intelligently designed, beautifully crafted platform that aggregates global Computer Science graduate program data from [CSRankings.org](http://csrankings.org/) and supercharges it with a built-in **Google Gemini AI advisor** — so you can find your dream university, the perfect professor, and get personalized admission insights, all in one place.
+
+<br/>
+
+[🚀 Get Started](#-quick-start) · [✨ Features](#-features) · [📸 Screenshots](#-screenshots) · [🏗️ Architecture](#%EF%B8%8F-architecture) · [🤝 Contributing](#-contributing)
 
 ---
 
-## 🌟 Overview
+</div>
 
-The **CS Universities Admission Portal** is a modern, responsive, and intelligently designed platform that aggregates computer science graduate program data from across the globe. Built specifically for prospective students, it takes the guesswork out of finding the right university, professor, and research lab.
+<br/>
 
-Powered by **React**, **Vite**, and **Google Gemini AI**, the portal delivers a premium glassmorphism user experience with unparalleled filtering capabilities and a built-in AI advisor.
+## 🔥 Why This Project?
+
+Applying to grad school is overwhelming. You're juggling hundreds of university pages, sifting through faculty lists, comparing GRE/TOEFL requirements, and trying to match your research interests to the right professors — all while wondering if you're even a good fit.
+
+**This portal solves that.** It puts every piece of information you need in a single, gorgeous interface — and backs it up with an AI advisor that actually understands your profile.
+
+<br/>
 
 ## ✨ Features
 
-### 🔍 Smart Interest-Based Filtering
-- **Research Area Breakdown**: Explore universities based on exact research interests (e.g., *Machine Learning, Computer Vision, Security, Systems, HCI*).
-- **Match Insights**: Instantly highlights exactly which professors at a specific university match your selected research areas.
-- **Geographic Filtering**: Filter by region (North America, Europe, Asia, etc.) and country.
-- **Real-Time Search**: Search by university name, country, or even specific professor names instantly.
+### 🔍 Intelligent Search & Discovery
+> Search across universities, professors, countries, and regions — all in real time with instant results.
+
+- **Global Coverage** — Browse universities across **60+ countries** spanning North America, Europe, Asia, Australasia, South America, and Africa.
+- **Instant Fuzzy Search** — Type a university name, professor, or country and see results filter in real time.
+- **Geographic Filtering** — Narrow down by region and country with cascading dropdown filters.
+
+---
+
+### 🎯 Research Interest Matching
+> Select your research interests and instantly see which universities and professors align with your goals.
+
+- **22 Research Areas** — From *Machine Learning* and *Computer Vision* to *Cryptography*, *Robotics*, *HCI*, and *Bioinformatics*.
+- **Color-Coded Tags** — Each research area has a unique, vibrant color for instant visual recognition.
+- **Professor-Level Matching** — When you select interests, each university card shows exactly *how many* professors match, and expanding the card reveals *which* professors and *which* of their publication venues triggered the match.
+- **Multi-Interest Support** — Select multiple interests simultaneously to find interdisciplinary programs.
+
+---
 
 ### 🤖 Gemini AI Admissions Advisor
-- **Floating AI Chatbot**: Always available context-aware assistant ready to answer your admission questions.
-- **Resume/Profile Analysis**: Upload your PDF resume/CV or transcript directly into the chat! The AI will parse the content and suggest universities and professors that fit your academic profile.
-- **Admission Insights**: Dynamically ask about GRE requirements, TOEFL cutoffs, GPA expectations, and application deadlines for specific universities and get real-time answers.
+> A conversational AI chatbot powered by Google Gemini 2.5 Flash, always one click away.
 
-### 📊 Deep Faculty Insights
-- View complete lists of faculty and their precise research areas within each university card.
-- Direct links to professor homepages to discover their lab and publications.
+- **Floating Action Button** — The "✨ AI Advisor" button is always accessible in the bottom-right corner.
+- **Contextual Chat** — Ask questions like *"Best universities for NLP research?"*, *"Compare ML programs in USA vs Europe"*, or *"What are the GRE requirements for MIT?"*
+- **Resume/CV Analysis** — Upload your PDF resume or transcript directly into the chat. The AI parses it client-side using `pdfjs-dist` and recommends specific universities and professors tailored to your background.
+- **Conversation Memory** — The chatbot maintains context across your conversation for follow-up questions.
+- **Quick Suggestion Chips** — Pre-built prompts to help you get started instantly.
 
-### 🌓 Premium UI/UX
-- **Glassmorphism Design**: Modern frosted glass aesthetics with vibrant, color-coded research interest tags.
-- **Theme Support**: Beautiful Dark and Light modes supported out-of-the-box.
-- **Fully Responsive**: Works seamlessly on mobile, tablet, and desktop displays.
+---
+
+### 📊 Deep University & Faculty Insights
+> Expand any university card to reveal a wealth of information.
+
+- **AI-Generated Admission Requirements** — Click "Ask Gemini" on any university to dynamically fetch real-time data on degree programs, GRE requirements, TOEFL/IELTS minimums, and GPA expectations.
+- **Full Faculty Directory** — Scrollable grid of every professor with their name, research venues, and a direct link to their homepage.
+- **Research Area Tags** — See all research interests covered by a university at a glance.
+
+---
+
+### 🌓 Premium Design & Theming
+> A UI that feels as good as it looks.
+
+- **Glassmorphism Design** — Frosted glass card surfaces with subtle blur effects and soft shadows.
+- **Dark & Light Mode** — Toggle between a sleek dark theme and a clean light theme with a single click. Your preference is saved to `localStorage`.
+- **Smooth Micro-Animations** — Hover effects, card lift transitions, pulsing match badges, and animated typing indicators.
+- **Fully Responsive** — Pixel-perfect on mobile, tablet, and desktop.
+
+<br/>
 
 ---
 
 ## 📸 Screenshots
 
-### 🌌 Main Dashboard (Dark Mode)
-The primary interface showcasing the premium glassmorphism design, search bar, and university list.
-![Main View](screenshots/main-view.png)
+<div align="center">
 
-### 🎯 Smart Filtering by Research Interest
-Selecting research interests highlights matching universities and specifically identifies which professors match your criteria.
-![Filtered View](screenshots/interest-filters.png)
+### 🌌 Main Dashboard — Dark Mode
+*The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.*
 
-### 📖 Deep Faculty & Admission Insights
-Expand any university card to see a full list of faculty, direct links to their homepages, and a dedicated AI button to fetch live admission requirements.
-![Expanded Card](screenshots/faculty-insights.png)
+</div>
 
-### 🤖 Gemini AI Assistant (Resume Analysis)
-Chat with the built-in Gemini advisor. Upload your resume (PDF/TXT) and let the AI find the best programs for your background.
-![Gemini Chat](screenshots/ai-assistant.png)
+![Main Dashboard](screenshots/main-view.png)
+
+---
+
+<div align="center">
+
+### 📖 University Card — Faculty & AI Insights
+*Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.*
+
+</div>
+
+![Faculty & Admission Insights](screenshots/faculty-insights.png)
+
+---
+
+<div align="center">
+
+### 🤖 AI-Generated Admission Requirements
+*Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.*
+
+</div>
+
+![AI Admission Insights](screenshots/interest-filters.png)
+
+---
+
+<div align="center">
+
+### 🧠 Gemini AI Advisor — Live Chat
+*The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.*
+
+</div>
+
+![Gemini AI Advisor Chat](screenshots/ai-assistant.png)
+
+---
+
+<div align="center">
 
 ### ☀️ Light Mode
-A clean and crisp light theme for those who prefer it.
+*A clean, crisp light theme for daytime use — every component adapts gracefully.*
+
+</div>
+
 ![Light Mode](screenshots/light-theme.png)
 
 ---
 
+<br/>
+
 ## 🏗️ Architecture
 
-- **Frontend**: React 18, Vite, standard CSS.
-- **Data Processing**: Pre-processed JSON generated from the original `institutions_csrankings.csv`.
-- **AI Integration**: A custom Vite plugin middleware runs alongside the dev server (`vite.config.js`) to securely proxy requests to the Google Gemini API, ensuring your API key is never exposed to the client.
-- **PDF Parsing**: Client-side PDF text extraction using `pdfjs-dist` to securely pass your resume context to the AI advisor without storing it on any server.
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        Browser (Client)                     │
+│                                                             │
+│  ┌──────────┐  ┌──────────────┐  ┌───────────────────────┐  │
+│  │ React 18 │  │ pdfjs-dist   │  │  CSS Glassmorphism    │  │
+│  │ App.jsx  │  │ (PDF parser) │  │  Dark/Light Themes    │  │
+│  └────┬─────┘  └──────┬───────┘  └───────────────────────┘  │
+│       │               │                                     │
+│       │  POST /generate, /chat, /recommend-profile          │
+│       └───────────────┼─────────────────────────────────────┤
+│                       │                                     │
+├───────────────────────┼─────────────────────────────────────┤
+│                Vite Dev Server (Middleware)                  │
+│                       │                                     │
+│         ┌─────────────▼──────────────┐                      │
+│         │  aiApiPlugin (vite.config)  │                      │
+│         │  • /generate  → Gemini API │                      │
+│         │  • /chat      → Gemini API │                      │
+│         │  • /recommend → Gemini API │                      │
+│         └─────────────┬──────────────┘                      │
+│                       │                                     │
+├───────────────────────┼─────────────────────────────────────┤
+│                       ▼                                     │
+│          Google Gemini API (v1beta)                          │
+│          Models: 2.5-flash → 2.5-flash-lite → 2.0-flash    │
+│          (automatic fallback chain)                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | React 18 + Vite | Component-based UI with hot module replacement |
+| **Styling** | Vanilla CSS | Glassmorphism, CSS variables, responsive design |
+| **AI Proxy** | Vite Plugin (Custom Middleware) | Securely proxies Gemini API calls — API key never reaches the browser |
+| **AI Engine** | Google Gemini 2.5 Flash | Admission insights, chat, and profile recommendation |
+| **PDF Parsing** | pdfjs-dist | Client-side resume text extraction — no data sent to third parties |
+| **Data Source** | CSRankings.org (Pre-processed JSON) | 500+ universities, 10,000+ faculty, 20+ research areas |
+| **Icons** | Lucide React | Lightweight, consistent icon set |
+
+<br/>
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v16+)
-- A [Google Gemini API Key](https://aistudio.google.com/app/apikey)
+
+| Requirement | Version |
+|-------------|---------|
+| [Node.js](https://nodejs.org/) | v16+ |
+| [Google Gemini API Key](https://aistudio.google.com/app/apikey) | Free tier works |
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/code-with-idrees/CS-Universities-Admission.git
-   cd CS-Universities-Admission
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/code-with-idrees/CS-Universities-Admission.git
+cd CS-Universities-Admission
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# 2. Install dependencies
+npm install
 
-3. **Set up Environment Variables**
-   Create a `.env` file in the root directory:
-   ```env
-   # Required: Get your API key from https://aistudio.google.com/app/apikey
-   VITE_GEMINI_API_KEY=your_actual_api_key_here
-   ```
+# 3. Set up your environment
+cp .env.example .env
+# Then edit .env and add your Gemini API key:
+#   VITE_GEMINI_API_KEY=your_key_here
 
-4. **Start the Development Server**
-   ```bash
-   npm run dev
-   ```
+# 4. Start the dev server
+npm run dev
+```
 
-5. Open your browser and navigate to `http://localhost:3000`.
+Open `http://localhost:3000` in your browser. That's it — you're in! 🎉
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with AI middleware |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run update-data` | Re-fetch and process latest data from CSRankings |
+
+<br/>
+
+---
+
+## 📁 Project Structure
+
+```
+CS-Universities-Admission/
+├── public/
+│   └── data/
+│       └── processed-universities.json   # Pre-processed university data (8MB)
+├── src/
+│   ├── components/
+│   │   ├── GeminiChat.jsx                # AI chatbot drawer with PDF upload
+│   │   ├── UniversityList.jsx            # University card grid with expansion
+│   │   ├── InterestFilter.jsx            # Research interest pill selector
+│   │   ├── FilterBar.jsx                 # Region & country dropdowns
+│   │   ├── ProfileUploader.jsx           # Resume upload + AI recommendations
+│   │   ├── SearchBar.jsx                 # Global search component
+│   │   └── Sidebar.jsx                   # Sidebar navigation
+│   ├── services/
+│   │   └── groqService.js               # API service with fallback logic
+│   ├── data/
+│   │   └── programs.js                   # Research areas, country maps, colors
+│   ├── App.jsx                           # Root component with state management
+│   ├── main.jsx                          # React entry point
+│   └── index.css                         # Full design system (800+ lines)
+├── vite.config.js                        # Vite config + Gemini AI proxy plugin
+├── .env.example                          # Environment variable template
+└── package.json
+```
+
+<br/>
+
+---
+
+## 🛡️ Security
+
+- **API Key Protection** — The Gemini API key lives exclusively in `.env` and is proxied through a server-side Vite middleware plugin. It is **never** exposed to the client-side bundle.
+- **Client-Side PDF Parsing** — Resume/CV files are parsed entirely in the browser using `pdfjs-dist`. No file data is ever sent to external servers — only the extracted text is passed to the AI.
+- **`.env` is gitignored** — Your API keys will never be committed to version control.
+
+<br/>
 
 ---
 
 ## 🤝 Contributing
+
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/code-with-idrees/CS-Universities-Admission/issues).
 
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```bash
+# Fork → Clone → Branch → Code → Push → PR
+git checkout -b feature/amazing-feature
+git commit -m "feat: add amazing feature"
+git push origin feature/amazing-feature
+```
 
-*Note: University and faculty data is originally sourced from CSRankings.*
+<br/>
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+<br/>
+
+---
+
+<div align="center">
+
+**Built with ❤️ by [Muhammad Idrees](https://github.com/code-with-idrees)**
+
+*University and faculty data sourced from [CSRankings.org](http://csrankings.org/) · AI powered by [Google Gemini](https://ai.google.dev/)*
+
+<br/>
+
+⭐ **If this project helped you, give it a star!** ⭐
+
+</div>
