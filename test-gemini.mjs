@@ -1,5 +1,5 @@
-const API_KEY = 'AIzaSyDYMsO3IhKh9O-2CkYrT1bzYxvhyOLpngA';
-const modelsToTry = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash-lite-001'];
+const API_KEY = 'AIzaSyBuhxgxt08iRWZfdhV-dXEgXuxdbLLXR7k';
+const modelsToTry = ['gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-2.0-flash'];
 
 for (const model of modelsToTry) {
   console.log(`\n=== Testing: ${model} ===`);
