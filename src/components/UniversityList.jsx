@@ -104,10 +104,10 @@ const UniversityCard = ({ u, isExpanded, onToggleExpand, selectedInterests }) =>
             </div>
           )}
         </div>
-        <button className="expand-btn">
-          {isExpanded ? '⯅ Hide Details' : '⯆ View Faculty & Admission Details'}
-        </button>
       </div>
+      <button className="expand-btn" onClick={(e) => { e.stopPropagation(); onToggleExpand(); }} style={{ width: '100%', marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
+        {isExpanded ? '⯅ Hide Details' : '⯆ View Faculty & Admission Details'}
+      </button>
       
       {isExpanded && (
         <div className="details-section">
