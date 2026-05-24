@@ -94,53 +94,37 @@ Applying to grad school is overwhelming. You're juggling hundreds of university 
 ### 🌌 Main Dashboard — Dark Mode
 *The primary interface with glassmorphism cards, search bar, region/country filters, and the floating AI Advisor button.*
 
-</div>
-
 ![Main Dashboard](screenshots/main-view.png)
 
 ---
 
-<div align="center">
-
 ### 📖 University Card — Faculty & AI Insights
 *Expand any university to see color-coded research interest tags, the Gemini-powered admission insights panel, and a scrollable faculty grid with direct homepage links.*
-
-</div>
 
 ![Faculty & Admission Insights](screenshots/faculty-insights.png)
 
 ---
 
-<div align="center">
-
 ### 🤖 AI-Generated Admission Requirements
 *Click "Ask Gemini" to dynamically fetch real admission data — degree programs offered, GRE policy, TOEFL/IELTS minimums, GPA expectations — plus the full faculty directory below.*
-
-</div>
 
 ![AI Admission Insights](screenshots/interest-filters.png)
 
 ---
 
-<div align="center">
-
 ### 🧠 Gemini AI Advisor — Live Chat
 *The conversational AI chatbot recommending top NLP universities with specific professors and research justifications, powered by Gemini 2.5 Flash.*
-
-</div>
 
 ![Gemini AI Advisor Chat](screenshots/ai-assistant.png)
 
 ---
 
-<div align="center">
-
 ### ☀️ Light Mode
 *A clean, crisp light theme for daytime use — every component adapts gracefully.*
 
-</div>
-
 ![Light Mode](screenshots/light-theme.png)
+
+</div>
 
 ---
 
