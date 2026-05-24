@@ -1,0 +1,166 @@
+/* InterestFilter.css – Premium research interest browser */
+
+.interest-filter {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="light"] .interest-filter {
+  background: rgba(0, 0, 0, 0.02);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.interest-filter__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.interest-filter__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.interest-filter__icon {
+  font-size: 1.4rem;
+}
+
+.interest-filter__title h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html[data-theme="light"] .interest-filter__title h2 {
+  background: linear-gradient(135deg, #4338ca, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.interest-filter__clear {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.interest-filter__clear:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #fff;
+}
+
+html[data-theme="light"] .interest-filter__clear {
+  color: #dc2626;
+  border-color: rgba(220, 38, 38, 0.3);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.interest-filter__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.interest-pill {
+  font-family: 'Inter', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(30, 41, 59, 0.5);
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  user-select: none;
+}
+
+html[data-theme="light"] .interest-pill {
+  background: rgba(0, 0, 0, 0.04);
+  color: #475569;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.interest-pill:hover {
+  border-color: var(--pill-border);
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.interest-pill--active {
+  border-color: var(--pill-border) !important;
+  background: var(--pill-bg) !important;
+  color: var(--pill-text) !important;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--pill-border) 25%, transparent);
+}
+
+.interest-pill__name {
+  line-height: 1;
+}
+
+.interest-pill__count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  opacity: 0.8;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+html[data-theme="light"] .interest-pill__count {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.interest-pill--active .interest-pill__count {
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .interest-filter {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .interest-filter__title h2 {
+    font-size: 1rem;
+  }
+
+  .interest-filter__grid {
+    gap: 0.4rem;
+  }
+
+  .interest-pill {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
