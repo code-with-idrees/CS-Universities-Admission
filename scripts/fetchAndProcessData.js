@@ -49,6 +49,15 @@ async function run() {
       });
     });
 
+    // Group author areas by name for O(1) lookup
+    const authorAreasMap = new Map();
+    authorData.forEach(a => {
+      if (!authorAreasMap.has(a.name)) {
+        authorAreasMap.set(a.name, new Set());
+      }
+      authorAreasMap.get(a.name).add(a.area);
+    });
+
     // Map authors to institutions
     csrankingsData.forEach(row => {
       const instName = row.affiliation.trim();
@@ -65,8 +74,8 @@ async function run() {
       const inst = institutionsMap.get(instName);
       
       // Find author areas
-      const authorInfos = authorData.filter(a => a.name === row.name);
-      const areas = [...new Set(authorInfos.map(a => a.area))];
+      const areasSet = authorAreasMap.get(row.name);
+      const areas = areasSet ? Array.from(areasSet) : [];
 
       inst.faculties.push({
         name: row.name,
